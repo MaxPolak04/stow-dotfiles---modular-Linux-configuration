@@ -1,0 +1,12 @@
+.git/
+*.log
+
+# SSH
+ssh/id_*
+ssh/known_hosts
+
+# env
+.env
+
+# system
+.DS_Store
