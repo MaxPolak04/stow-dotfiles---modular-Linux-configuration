@@ -1,0 +1,7 @@
+[user]
+	email = max.polak04@gmail.com
+	name = Maksymilian Polak
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret

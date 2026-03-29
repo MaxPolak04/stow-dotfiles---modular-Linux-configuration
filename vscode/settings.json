@@ -1,0 +1,78 @@
+{
+	"files.autoSave": "afterDelay",
+	"editor.formatOnSave": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"editor.wordWrap": "on",
+	"editor.linkedEditing": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features",
+	},
+	"emmet.syntaxProfiles": {
+		"html": {
+			"inline_break": 2,
+		},
+	},
+	"emmet.variables": {
+		"lang": "pl",
+	},
+	"liveSassCompile.settings.formats": [
+		// This is the default.
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+
+			// null for all three -> denotes the same path as the SASS file
+			"savePath": "/css",
+			"savePathReplacementPairs": null,
+		},
+	],
+	"files.associations": {
+		"*.kit": "html",
+	},
+	"cmake.enabledOutputParsers": [
+		"cmake",
+		"gnuld",
+		"msvc",
+		"ghs",
+		"diab"
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "build",
+				"type": "shell",
+				"command": "make",
+				"group": {
+					"kind": "build",
+					"isDefault": true,
+				},
+				"problemMatcher": ["$gcc"],
+			},
+		],
+	},
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"editor.cursorBlinking": "expand",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"workbench.colorTheme": "Tokyo Night Storm",
+	"git.autofetch": true,
+	"containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+	"terminal.integrated.allowedLinkSchemes": [
+		"file",
+		"http",
+		"https",
+		"mailto",
+		"vscode",
+		"vscode-insiders",
+		"docker-desktop",
+	],
+	"python.defaultInterpreterPath": "/bin/python",
+	"telemetry.telemetryLevel": "off",
+	"gitlens.ai.model": "gitkraken",
+	"gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+	"git.confirmSync": false,
+}
