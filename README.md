@@ -29,8 +29,8 @@ cd ~/dotfiles
 Install GNU Stow:
 
 ```bash
-sudo apt update
-sudo apt install stow
+sudo pacman -Syu
+sudo pacman -S stow
 ```
 
 Create symlinks:
