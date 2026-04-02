@@ -22,7 +22,7 @@ This approach allows me to:
 Clone the repository:
 
 ```bash
-git clone <repo> ~/dotfiles
+git clone https://github.com/MaxPolak04/stow-dotfiles---modular-Linux-configuration.git ~/dotfiles
 cd ~/dotfiles
 ```
 
