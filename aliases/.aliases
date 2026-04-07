@@ -1,0 +1,21 @@
+# ~/.aliases
+
+# Basic
+# Eza instead of ls
+alias ls='eza --color=always --icons=always --group-directories-first'
+alias ll='eza -l --color=always --icons=always --git --group-directories-first'
+alias la='eza -la --color=always --icons=always --git --group-directories-first'
+# Bat intead of cat
+alias cat='bat'
+
+# Games & GPU
+alias p='prime-run'
+alias set-hybrid='sudo envycontrol -s hybrid'
+alias set-intel='sudo envycontrol -s integrated'
+
+# Launch Catppuccin Mocha Theme
+export BAT_THEME="Catppuccin Mocha"
+
+# Docker/Podman
+export REGISTRY_AUTH_FILE="$HOME/.docker/config.json"
+
