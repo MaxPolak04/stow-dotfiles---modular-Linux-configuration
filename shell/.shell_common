@@ -1,0 +1,53 @@
+# ~/.shell_common - A shared configuration for Bash and Zsh
+
+# =========================================
+# 1. Environmental Variables
+# =========================================
+export BAT_THEME="Catppuccin Mocha"
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+export REGISTRY_AUTH_FILE="$HOME/.docker/config.json"
+
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+
+# =========================================
+# 2. Aliases
+# =========================================
+[ -f ~/.aliases ] && source ~/.aliases
+
+# =========================================
+# 3. Dynamic Shell Detection
+# =========================================
+if [ -n "$ZSH_VERSION" ]; then
+    SHELL_NAME="zsh"
+elif [ -n "$BASH_VERSION" ]; then
+    SHELL_NAME="bash"
+else
+    SHELL_NAME="sh"
+fi
+
+# =========================================
+# 4. Tool Initialization (shell-dependent)
+# =========================================
+# FZF - Fuzzy Finder (loads a .bash or .zsh file)
+if [ -f "/usr/share/fzf/key-bindings.${SHELL_NAME}" ]; then
+    source "/usr/share/fzf/key-bindings.${SHELL_NAME}"
+    source "/usr/share/fzf/completion.${SHELL_NAME}"
+fi
+
+# Zoxide (Smart cd)
+if command -v zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init ${SHELL_NAME})"
+fi
+
+# Starship Prompt
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init ${SHELL_NAME})"
+fi
+
+# =========================================
+# 5. Startup
+# =========================================
+# Run Fastfetch only if the session is interactive
+if [[ $- == *i* ]]; then
+    fastfetch
+fi

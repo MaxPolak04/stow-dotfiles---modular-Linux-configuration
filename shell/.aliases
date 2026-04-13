@@ -5,8 +5,13 @@
 alias ls='eza --color=always --icons=always --group-directories-first'
 alias ll='eza -l --color=always --icons=always --git --group-directories-first'
 alias la='eza -la --color=always --icons=always --git --group-directories-first'
-# Bat intead of cat
+# Bat instead of cat
 alias cat='bat'
+# Zoxide instead of cd
+eval "$(zoxide init zsh)"
+# FZF - Fuzzy Finder (instead od Ctrl + R)
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # Games & GPU
 alias p='prime-run'
@@ -17,5 +22,9 @@ alias set-intel='sudo envycontrol -s integrated'
 export BAT_THEME="Catppuccin Mocha"
 
 # Docker/Podman
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 export REGISTRY_AUTH_FILE="$HOME/.docker/config.json"
 
+# Kubernetes (Minikube kubectl)
+alias kubectl="minikube kubectl --"
+alias k="kubectl"
