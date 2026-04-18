@@ -21,3 +21,8 @@ alias set-intel='sudo envycontrol -s integrated'
 alias kubectl="minikube kubectl --"
 alias k="kubectl"
 
+# =========================================
+# Spotify Player
+# =========================================
+alias sp='spotify_player'
+
